@@ -22,7 +22,7 @@ public class AuthorController {
     }
 
     @GetMapping("/findBy/{name}")
-    public List<AuthorResponse> findBuName(@PathVariable("name")String name){
+    public List<AuthorResponse> findByName(@PathVariable("name")String name){
         return authorService.finAuthorByName(name);
     }
 }

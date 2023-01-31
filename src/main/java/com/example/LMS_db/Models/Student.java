@@ -2,10 +2,7 @@ package com.example.LMS_db.Models;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -13,8 +10,9 @@ import java.sql.Date;
 
 @Entity
 @Table(name = "student")
-@Getter
-@Setter
+@Data
+@Builder
+@AllArgsConstructor
 @NoArgsConstructor
 public class Student {
 
@@ -43,10 +41,4 @@ public class Student {
     @OneToOne(mappedBy = "student",cascade = CascadeType.ALL)
     private Card card;
 
-    public Student(String name, String email, int age, String country) {
-        this.name = name;
-        this.email = email;
-        this.age = age;
-        this.country = country;
-    }
 }
